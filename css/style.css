@@ -221,7 +221,8 @@ body {
 	p {
 		margin: 0 0 1.5em;
 		padding: 0;
-		line-height: 1.87em;
+		/* line-height: 1.87em;*/
+		line-height: 1.5em;
 	}
 
 	.lead {
@@ -889,6 +890,18 @@ body {
 	.button.white:hover {
 		color: #fff;
 		background-color: transparent; 
+	}
+	
+	.button.light { 
+		border-color: #cfcfcf;
+		background-color: transparent; 
+		color: #37b2c4; 
+	}
+	
+	.button.light:hover {
+		border-color: transparent;
+		background-color: #37b2c4; 
+		color: #fff;		
 	}
 
 /* ---------------------------------------------------------------------- */
@@ -3998,7 +4011,7 @@ body {
 			padding: 60px 15px;
 			width: 33.33%;
 			border: 1px solid #fff;
-			background-color: #f85c37;
+			/*background-color: #f85c37;*/
 			color: #fff;
 			vertical-align: top;
 			text-align: center;
