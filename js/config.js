@@ -114,8 +114,8 @@
 					 zoom: 18,
 					 markers:[
 						 {
-							 address: "Sarmiento 452, Resistencia",
-							 html: "Fundación Chaco",
+							 address: "Italia 1435, Resistencia",
+							 html: "Fundación Chaco Futuro",
 							 popup: true
 						 }
 					 ]
