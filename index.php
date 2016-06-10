@@ -123,7 +123,7 @@
 
 					<div class="header-in">
 
-						<h1 data-logo="Engorgio" id="logo"><a href="index.html"><img src="images/logo.png" alt="" /></a> </h1>
+						<h1 data-logo="Engorgio" id="logo"><a href="index.php"><img src="images/logo.png" alt="" /></a> </h1>
 
 						<nav id="navigation" class="navigation">
 
@@ -531,7 +531,7 @@
 							Teléfono: <a href="#">(0362) 457 0129 </a> E-mail: <a href="#">fundacion.chaco.futuro@gmail.com</a>
 						</h3>
 
-						<form class="contact-form" method="post" action="/">
+						<!--<form class="contact-form" method="post" action="">
 
 							<div class="inputs-block">
 
@@ -554,7 +554,7 @@
 
 							</div><!--/ .inputs-block-->
 
-							<div class="textarea-block">
+							<!--<div class="textarea-block">
 
 								<p class="input-block">
 									<textarea name="message" id="message" placeholder="Mensaje *"></textarea>	
@@ -566,7 +566,58 @@
 
 							</div><!--/ .textarea-block-->
 
-						</form><!--/ .contact-form-->
+						<!--</form><!--/ .contact-form-->  
+                        <?php
+if (!isset($_POST['email'])) {
+?>
+  <form  action="<?=$_SERVER['PHP_SELF']?>" method="post">
+
+
+   <!-- <div class="inputs-block"> -->
+    <p class="input-block type-input">
+		<input type="text" name="nombre" id="nombre" placeholder="Nombre *" />
+	</p>
+    <p class="input-block type-input">
+		<input type="text" name="telefono" id="telefono" placeholder="Profesión" />
+	</p>
+    <p class="input-block type-input">
+		<input type="email" name="email" id="email" placeholder="Email *" />
+	</p>
+                                
+    <!--</div>
+    <div class="textarea-block"> -->
+
+								<p class="input-block">
+									<textarea name="mensaje" id="mensaje" placeholder="Mensaje *"></textarea>	
+								</p>	
+
+								<p class="input-block">
+									<button class="button default submit" type="submit" id="submit"><i class="icon-paper-plane-2"></i></button>
+								</p>
+                                 <!--<input type="reset" value="Borrar" />
+    <input type="submit" value="Enviar"  placeholder="Enviar" /> -->
+
+							<!--</div> --><!--/ .textarea-block-->
+   
+   
+  </form>
+<?php
+}else{
+  $mensaje="Mensaje del formulario de contacto de Chaco Futuro";
+  $mensaje.= "\nNombre: ". $_POST['nombre'];
+  $mensaje.= "\nEmail: ".$_POST['email'];
+  $mensaje.= "\nTelefono: ". $_POST['telefono'];
+  $mensaje.= "\nMensaje: \n".$_POST['mensaje'];
+  $destino= "silviaeaguilar@gmail.com; fundacion.chaco.futuro@gmail.com";
+  $remitente = $_POST['email'];
+  $asunto = "Mensaje enviado por: ".$_POST['nombre'];
+  mail($destino,$asunto,$mensaje,"FROM: $remitente");
+  ?>
+  <p><strong>Mensaje enviado.</strong></p>
+<?php
+}
+?>
+                       
                         
                         <div class="divider"></div>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.8193571968327!2d-58.97166038437805!3d-27.443739922170963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450cff765d6533%3A0xc3268759d4fefadd!2sAv.+Italia+1435%2C+H3508EJS+Resistencia%2C+Chaco!5e0!3m2!1ses-419!2sar!4v1464981834181" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -731,7 +782,7 @@
 
 				<div class="col-sm-6 col-md-3">
 					
-					<a href="index.html"><img src="images/biglogo.png" alt="chacofuturo" class="ls-l"  style="top: 50%; left: 50%;" data-ls="offsetxin: -50px; offsetxout: 0; offsetyin: 0; offsetyout: 0; durationin: 2000; delayin: 2000; easingin: easeInOutExpo; easingout: easeInOutExpo;" /></a>
+					<a href="index.php"><img src="images/biglogo.png" alt="chacofuturo" class="ls-l"  style="top: 50%; left: 50%;" data-ls="offsetxin: -50px; offsetxout: 0; offsetyin: 0; offsetyout: 0; durationin: 2000; delayin: 2000; easingin: easeInOutExpo; easingout: easeInOutExpo;" /></a>
 					
 				</div>
 
@@ -828,40 +879,6 @@
 <script src="js/custom.js"></script>
 
 
-<?php
-$action=$_REQUEST['action'];
-if ($action=="")    /* display the contact form */
-    {
-    ?>
-    <form  action="" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="action" value="submit">
-    Your name:<br>
-    <input name="name" type="text" value="" size="30"/><br>
-    Your email:<br>
-    <input name="email" type="text" value="" size="30"/><br>
-    Your message:<br>
-    <textarea name="message" rows="7" cols="30"></textarea><br>
-    <input type="submit" value="Send email"/>
-    </form>
-    <?php
-    } 
-else                /* send the submitted data */
-    {
-    $name=$_REQUEST['name'];
-    $email=$_REQUEST['email'];
-    $message=$_REQUEST['message'];
-    if (($name=="")||($email=="")||($message==""))
-        {
-        echo "All fields are required, please fill <a href=\"\">the form</a> again.";
-        }
-    else{        
-        $from="From: $name<$email>\r\nReturn-path: $email";
-        $subject="Message sent using your contact form";
-        mail("youremail@yoursite.com", $subject, $message, $from);
-        echo "Email sent!";
-        }
-    }  
-?>
 
 
 </body>
