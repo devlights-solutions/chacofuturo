@@ -426,19 +426,19 @@
 							<ul>
 
 								<li style="padding:0px 0px !important; background-color:#FFF !important" >
-									<a href="contactanos.html" title="Contactanos" target="_self">
+									<a href="contactanos.php" title="Contactanos" target="_self">
                                     	<img src="images/portfolio/16.jpg" alt="" />
                                     </a>
 									
 								</li>
 								<li style="padding:0px 0px !important; background-color:#FFF !important" >
-									<a href="contactanos.html" title="Contactanos" target="_self">
+									<a href="contactanos.php" title="Contactanos" target="_self">
                                     	<img src="images/portfolio/17.jpg" alt="" />
                                     </a>
 									
 								</li>
 								<li style="padding:0px 0px !important; background-color:#FFF !important" >
-									<a href="contactanos.html" title="Contactanos" target="_self">
+									<a href="contactanos.php" title="Contactanos" target="_self">
                                     	<img src="images/portfolio/18.jpg" alt="" />
                                     </a>
 									
