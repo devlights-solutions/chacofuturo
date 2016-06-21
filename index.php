@@ -254,7 +254,7 @@
 												<a href="quienessomos.html#equipo"><h4>Nuestro Equipo</h4></a>
 												<a href="quienessomos.html#equipo">
                                                 <p>
-													Y es el mejor, algunos de river, otros de boca, otros de racing, pero buenos profesionales todos. Este espacio tendría la misma consigna que el espacio anterior.
+													Nos proponemos crear un espacio para la investigación, el diseño y la elaboración de políticas públicas, programas y proyectos sociales. Al mismo tiempo, generar un ámbito para la formación de “cuadros integrales”, personas con vocación por lo público, con una preparación de excelencia desde el punto de vista técnico y con capacidad de gestión en el Estado.
 												</p>
                                                 </a>
 											</div><!--/ .extra-inner-->				
